@@ -1,21 +1,37 @@
 # Caballeros del Zodiaco: práctica de clases y herencia en Python
-
+class Ataque:
+    def __init__(self, nombre, herida):
+        self.nombre = nombre
+        self.herida = herida
+    def mostrar_info(self):
+        return f"Ataque: {self.nombre} {self.herida}"
 
 class Guerrero:
     def __init__(self, nombre, cosmo, edad):
         self.nombre = nombre
         self.cosmo = cosmo
         self.edad = edad
+        self.ataques = []
 
     def mostrar_info(self):
-      return f"Nombre: {self.nombre} | Cosmo: {self.cosmo} | Edad: {self.edad}"
+        return f"Nombre: {self.nombre} | Cosmo: {self.cosmo} | Edad: {self.edad}"
+
+    def anadir_ataque(self, ataque):
+        self.ataques.append(ataque)
+
+    def mostrar_ataques(self):
+        for ataque in self.ataques:
+            print (ataque.mostrar_info())
+
+
+
 
 class Caballero(Guerrero):
-    def __init__(self, nombre, cosmo,edad,
-                 armadura, constelacion):
+    def __init__(self, nombre, cosmo,edad, armadura, constelacion):
         super().__init__(nombre, cosmo, edad) # reutiliza el __init__ del padre
         self.armadura = armadura
-        self.costelacion = constelacion
+        self.constelacion = constelacion
+
     def equiparse(self):
         return f"{self.nombre} viste la armadura de {self.armadura}"
 
@@ -66,6 +82,9 @@ seiya = CaballeroDeBronce("Seiya", 100, 13, "Pegaso", "Pegaso", "Marin")
 print(seiya.entrenar())
 print(seiya.mostrar_info())
 
+meteoros = Ataque("Meteoros de Pegaso", 25)
+seiya.anadir_ataque(meteoros)
+seiya.mostrar_ataques()
 
 
 
