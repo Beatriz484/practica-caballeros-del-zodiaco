@@ -31,7 +31,7 @@ Todos los personajes son un `Guerrero`. De él heredan los caballeros, los espec
 - **Espectros:** Radamanthys, Minos y Éaco
 - **Dioses:** Hades y Atenea
 
-  <img width="420" height="500" alt="caballeros-zodiaco" src="https://github.com/user-attachments/assets/1e7685c4-9d3c-453e-85fb-0ff714e9ac67" />
+  <img width="320" height="500" alt="caballeros-zodiaco" src="https://github.com/user-attachments/assets/1e7685c4-9d3c-453e-85fb-0ff714e9ac67" />
 
 
 Todos los personajes se guardan en una lista y se recorren con un `for`, mostrando sus datos y sus ataques.
